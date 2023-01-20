@@ -44,10 +44,22 @@ body {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
     overflow: hidden;
     margin: 1%;
+    /* width: 100%; */
 }
 .child1 P {
     text-align: justify;
 }
+
+#myflex {
+    flex: 1;
+}
+
+#portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 #Présentation {
     margin: 5%;
 }
@@ -80,11 +92,6 @@ td {
     margin: 1em;
 }
 
-#portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 h4 {
     text-align: center;
     margin: auto;

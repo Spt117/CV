@@ -12,6 +12,13 @@ export default function Portfolio() {
             techno: "Shopify",
         },
         {
+            titre: "Plateforme de vote",
+            url: "https://vote-test.vercel.app/",
+            description:
+                "Création d'une plateforme de vote en ligne utilisant la technologie de la blockchain. Possibilité de la tester sur les testnets d'Ethereum.",
+            techno: "React côté Front-end et j'ai utilisé la librairie Ether js ainsi qu'Hardhat pour le développement du SC.",
+        },
+        {
             titre: "Staking Factory",
             url: "https://stacking-factory.vercel.app/Stacking",
             description:
@@ -35,7 +42,7 @@ export default function Portfolio() {
     ];
 
     return (
-        <div className="child1">
+        <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
             <div id="portfolio">
                 {sites.map((site, index) => (
