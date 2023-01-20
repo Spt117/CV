@@ -35,7 +35,7 @@ export default function Portfolio() {
     ];
 
     return (
-        <div id="container_port">
+        <div className="child1">
             <h1>Mon Portfolio</h1>
             <div id="portfolio">
                 {sites.map((site, index) => (
@@ -43,7 +43,9 @@ export default function Portfolio() {
                         <h4>{site.titre}</h4>
                         {site.image ? (
                             <div className="container-image">
-                                <Image src={site.image} className="image" />
+                                <a href={site.url}>
+                                    <Image src={site.image} className="image" />
+                                </a>
                             </div>
                         ) : (
                             <iframe
@@ -66,6 +68,7 @@ export default function Portfolio() {
                     </div>
                 ))}
             </div>
+            <a href="/">Retour</a>
         </div>
     );
 }
