@@ -1,7 +1,7 @@
 import Image from "next/image.js";
 import Github from "../assets/Github.png";
 import Linkedin from "../assets/LinkedIn.png";
-import Port from "../assets/Portfolio.png";
+import Port from "../assets/portfolio.png";
 
 export default function Social() {
     return (
