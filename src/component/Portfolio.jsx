@@ -1,7 +1,11 @@
+import Image from "next/image.js";
+import beyblade from "../assets/beyblade-shop.png";
+
 export default function Portfolio() {
     const sites = [
         {
             titre: "Beyblade Shop",
+            image: beyblade,
             url: "https://beyblade-shop.com",
             description:
                 "Ma première réussite, un site d'ecommerce sur Shopify avec plus de 300 visiteurs quotidiens grâce à une acquisition de traffic en SEO.",
@@ -26,7 +30,7 @@ export default function Portfolio() {
             url: "https://argonautes-front.vercel.app/",
             description:
                 "Petit exercice FullStack dans le cadre de mon apprentissage.",
-            techno: "React côté Front-end, un serveur Node-Express Js avec une base de donnée MongoDB côté Beckend. J'ai utilisé Vercel à la fois pour le serveur et pour le Front.",
+            techno: "React côté Front-end, un serveur Node-Express Js avec une base de donnée MongoDB côté Backend. J'ai utilisé Vercel à la fois pour le serveur et pour le Front.",
         },
     ];
 
@@ -37,13 +41,19 @@ export default function Portfolio() {
                 {sites.map((site, index) => (
                     <div key={index} className="container-site">
                         <h4>{site.titre}</h4>
-                        <iframe
-                            src={site.url}
-                            frameBorder="0"
-                            title="Exercice Particeep"
-                            width="300"
-                            height="200"
-                        ></iframe>
+                        {site.image ? (
+                            <div className="container-image">
+                                <Image src={site.image} className="image" />
+                            </div>
+                        ) : (
+                            <iframe
+                                src={site.url}
+                                frameBorder="0"
+                                title="Exercice Particeep"
+                                width="300"
+                                height="200"
+                            ></iframe>
+                        )}
                         <p>
                             <b>Description :</b> {site.description}
                             <br />
