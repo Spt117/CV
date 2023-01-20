@@ -5,11 +5,11 @@ export default function Stack() {
                 <caption>Mes technologies</caption>
                 <thead>
                     <tr>
-                        <th colspan="1">Front-End</th>
-                        <th colspan="1">Back-End</th>
-                        <th colspan="1">Blockchain</th>
-                        <th colspan="1">CMS</th>
-                        <th colspan="1">Production</th>
+                        <th colSpan="1">Front-End</th>
+                        <th colSpan="1">Back-End</th>
+                        <th colSpan="1">Blockchain</th>
+                        <th colSpan="1">CMS</th>
+                        <th colSpan="1">Production</th>
                     </tr>
                 </thead>
                 <tbody>

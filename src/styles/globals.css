@@ -5,12 +5,14 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* justify-content: space-around; */
 }
 
 .containerP {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #titres {
@@ -32,17 +34,10 @@ body {
     max-height: 100%;
 }
 
-#portfolio {
-    width: 50%;
-    background-color: #21a1eb;
-}
 #child1 {
-    width: 50%;
     background-color: #8ec5fc;
     background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
-
     border-radius: 3%;
-    border-color: black;
     margin: 1%;
     padding: 1rem;
 }
@@ -80,7 +75,8 @@ td {
 
 #portfolio {
     display: flex;
-    padding: 1%;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 h4 {
     text-align: center;
@@ -96,8 +92,14 @@ iframe {
     margin: 1%;
     padding: 1%;
     background-color: rgba(255, 255, 255, 0.1);
-    text-align: center;
 }
+
 .container-site p {
     text-align: justify;
+    width: 240px;
+}
+#container_port {
+    text-align: center;
+    background-color: #21a1eb;
+    border-radius: 3%;
 }
