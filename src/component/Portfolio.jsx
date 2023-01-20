@@ -4,7 +4,7 @@ export default function Portfolio() {
             titre: "Beyblade Shop",
             url: "https://beyblade-shop.com",
             description:
-                "Ma première réussite, un site d'ecommerce sur Shopify avec plus de 300 visiteurs quotidiens grâce à une acquisition de traffic en SEO ",
+                "Ma première réussite, un site d'ecommerce sur Shopify avec plus de 300 visiteurs quotidiens grâce à une acquisition de traffic en SEO.",
             techno: "Shopify",
         },
         {
@@ -12,7 +12,7 @@ export default function Portfolio() {
             url: "https://stacking-factory.vercel.app/Stacking",
             description:
                 "Création d'une plateforme de Staking sur la blockchain Ethereum, possibilité d'ajouter des pools et de choisir le rendement.",
-            techno: "React pour le Front-end, j'ai utilisé la librairie Ether js pour communiquer avec les SmartContracts. Pour le développement et le déploiement de ceux-ci, je me suis servi de Haardhat. ",
+            techno: "React pour le Front-end, j'ai utilisé la librairie Ether js pour communiquer avec les SmartContracts. Pour le développement et le déploiement de ceux-ci, je me suis servi de Hardhat. ",
         },
         {
             titre: "Exercice Particeep",

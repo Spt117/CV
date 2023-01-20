@@ -40,6 +40,7 @@ body {
     border-radius: 3%;
     margin: 1%;
     padding: 1rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 #Présentation {
     margin: 5%;
@@ -87,7 +88,7 @@ iframe {
     border-radius: 1em;
 }
 .container-site {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
     border-radius: 3rem;
     margin: 1%;
     padding: 1%;
@@ -100,6 +101,10 @@ iframe {
 }
 #container_port {
     text-align: center;
-    background-color: #21a1eb;
+    /* background-color: #21a1eb; */
+    background-color: #8ec5fc;
+    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
     border-radius: 3%;
+    margin: 1%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
 }
