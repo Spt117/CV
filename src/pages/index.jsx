@@ -2,7 +2,6 @@ import Photo from "../assets/photo-identite.png";
 import Image from "next/image.js";
 import Stack from "@/component/Stack.jsx";
 import Social from "@/component/Social.jsx";
-import Portfolio from "@/component/Portfolio.jsx";
 
 export default function Home() {
     return (

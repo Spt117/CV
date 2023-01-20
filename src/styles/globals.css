@@ -1,10 +1,17 @@
 html,
 body {
     margin: 0%;
-    background-image: linear-gradient(-225deg, #fdf2fd 0%, #b3fffd 100%);
-    min-height: 100%;
+    background-image: url("../assets/montagne.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* min-height: 100%; */
 }
 
+#__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -31,15 +38,12 @@ body {
 
 .child1 {
     text-align: center;
-    background-color: #8ec5fc;
-    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+    background-color: rgb(142, 197, 252, 0.5);
     border-radius: 30px;
     padding: 1rem;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 3%;
     overflow: hidden;
+    margin: 1%;
 }
 .child1 P {
     text-align: justify;
@@ -103,7 +107,6 @@ iframe {
 }
 #container_port {
     text-align: center;
-    /* background-color: #21a1eb; */
     background-image: linear-gradient(
         -225deg,
         #5d9fff 0%,
