@@ -116,3 +116,28 @@ iframe {
     max-width: 100%;
     border-radius: 3%;
 }
+
+#contact-titre {
+    text-align: center;
+}
+#formulaire {
+    color: aliceblue;
+}
+input,
+textarea {
+    background-color: rgb(255, 255, 255, 0.7);
+}
+#inputs {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+textarea {
+    /* width: 100%; */
+    height: 50px;
+}
+#mymessage {
+    display: flex;
+    flex-direction: column;
+}

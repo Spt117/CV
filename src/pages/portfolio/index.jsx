@@ -1,5 +1,5 @@
 import Portfolio from "@/component/Portfolio.jsx";
 
-export default function test() {
+export default () => {
     return <Portfolio />;
-}
+};
