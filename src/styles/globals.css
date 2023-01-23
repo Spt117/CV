@@ -166,7 +166,7 @@ textarea {
     border: none;
     outline: none;
     color: #fff;
-    background: #111;
+    background: rgb(17, 17, 17);
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -220,7 +220,7 @@ textarea {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111;
+    background: rgb(18, 18, 18);
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -241,4 +241,26 @@ textarea {
     margin-bottom: 1em;
     text-align: center;
     margin-top: 0;
+}
+.button-site {
+    padding: 0.2em;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 0.5em;
+}
+
+.button-36 {
+    background-color: rgba(11, 29, 43, 0.5);
+    border-radius: 5px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    touch-action: manipulation;
+    padding: 0.5em;
+}
+
+.button-36:hover {
+    box-shadow: rgba(255, 255, 255, 0.5) 0 1px 30px;
+    transition-duration: 0.1s;
 }

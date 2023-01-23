@@ -71,7 +71,9 @@ export default function Portfolio() {
                             <br />
                             <br />
                             <a href={site.url} className="buttons">
-                                Voir le site
+                                <button className="button-36">
+                                    Voir le site
+                                </button>
                             </a>
                         </p>
                     </div>
