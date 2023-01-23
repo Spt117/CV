@@ -47,7 +47,7 @@ export default function Portfolio() {
             <div id="portfolio">
                 {sites.map((site, index) => (
                     <div key={index} className="container-site">
-                        <h4>{site.titre}</h4>
+                        <h3>{site.titre}</h3>
                         {site.image ? (
                             <div className="container-image">
                                 <a href={site.url}>
@@ -70,12 +70,16 @@ export default function Portfolio() {
                             <b>Technologies utilisées :</b> {site.techno}
                             <br />
                             <br />
-                            <a href={site.url}>Voir le site</a>
+                            <a href={site.url} className="buttons">
+                                Voir le site
+                            </a>
                         </p>
                     </div>
                 ))}
             </div>
-            <a href="/">Retour</a>
+            <a href="/">
+                <button className="glow-on-hover">Retour</button>
+            </a>
         </div>
     );
 }

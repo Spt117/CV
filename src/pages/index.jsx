@@ -25,7 +25,10 @@ export default function Home() {
                     comme la Blockchain, et j'aime découvrir de nouveaux
                     langages et de nouveaux frameworks !<br />
                     <br /> Vous pouvez retrouver mon portfolio{" "}
-                    <a href="/portfolio">ici</a> !
+                    <a href="/portfolio" className="abutton">
+                        ici
+                    </a>{" "}
+                    !
                 </p>
                 <Stack />
             </div>

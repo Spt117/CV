@@ -46,7 +46,7 @@ export default function Contact() {
                         />
                         <input
                             type="email"
-                            placeholder="e-mail*"
+                            placeholder="e-mail"
                             required="required"
                             onChange={(e) => (myMessage.email = e.target.value)}
                         />
