@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
-
     let myMessage = {
         firstName: "",
         name: "",
@@ -12,8 +10,8 @@ export default function Contact() {
     };
 
     useEffect(() => {
-        console.log(form);
-    }, [form]);
+        console.log(myMessage);
+    }, [myMessage]);
 
     function eatFood() {
         alert("Form has been submitted");
@@ -21,14 +19,21 @@ export default function Contact() {
 
     function test() {
         console.log(myMessage);
+        fetch("/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(myMessage),
+        });
         eatFood();
     }
 
     return (
         <div id="formulaire">
             <h1 id="contact-titre">Formulaire de contact</h1>
-            <form method="POST" onSubmit={test}>
-                <div>
+            <div>
+                <form>
                     <div id="inputs">
                         <input
                             type="text"
@@ -63,10 +68,9 @@ export default function Contact() {
                                 (myMessage.message = e.target.value)
                             }
                         ></textarea>
-                        <input type="submit" id="validation" />
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
             <button onClick={test}> Clic </button>
         </div>
     );

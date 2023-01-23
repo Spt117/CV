@@ -30,11 +30,11 @@ export default function Social() {
                         <Image src={Port} alt="Portfolio" className="social" />
                     </a>
                 </div>
-                {/* <div>
+                <div>
                     <a href="/contact" title="Contactez-moi !">
                         <Image src={Cont} alt="Contact" className="social" />
                     </a>
-                </div> */}
+                </div>
             </div>
         </footer>
     );
