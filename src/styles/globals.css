@@ -264,3 +264,19 @@ textarea {
     box-shadow: rgba(255, 255, 255, 0.5) 0 1px 30px;
     transition-duration: 0.1s;
 }
+
+.btn {
+    background-color: orange;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px 20px;
+    transition: 350ms;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border-color: #1e1e1e;
+    color: #1e1e1e;
+    transition: 350ms;
+}

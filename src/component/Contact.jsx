@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function Contact() {
     let myMessage = {
         firstName: "",
@@ -9,12 +7,12 @@ export default function Contact() {
         message: "",
     };
 
-    useEffect(() => {
-        console.log(myMessage);
-    }, [myMessage]);
+    function init() {
+        const form = document.querySelector("#myForm");
+        form.reset();
+    }
 
-    function test() {
-        console.log(myMessage);
+    function sendForm() {
         fetch("/api/form", {
             method: "POST",
             headers: {
@@ -22,21 +20,24 @@ export default function Contact() {
             },
             body: JSON.stringify(myMessage),
         });
+        init();
     }
 
     return (
         <div id="formulaire">
             <h1 id="contact-titre">Formulaire de contact</h1>
             <div>
-                <form>
+                <form id="myForm">
                     <div id="inputs">
                         <input
+                            className="init"
                             type="text"
                             required="required"
                             placeholder="Nom"
                             onChange={(e) => (myMessage.name = e.target.value)}
                         />
                         <input
+                            className="init"
                             type="text"
                             required="required"
                             placeholder="Prénom"
@@ -45,6 +46,7 @@ export default function Contact() {
                             }
                         />
                         <input
+                            className="init"
                             type="email"
                             placeholder="e-mail"
                             required="required"
@@ -53,6 +55,7 @@ export default function Contact() {
                     </div>
                     <div id="mymessage">
                         <textarea
+                            className="init"
                             required="required"
                             name="message"
                             id=""
@@ -66,7 +69,9 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
-            <button onClick={test}> Clic </button>
+            <button onClick={sendForm} className="btn">
+                Envoyer
+            </button>
         </div>
     );
 }
