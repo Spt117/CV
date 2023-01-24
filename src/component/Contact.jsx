@@ -13,10 +13,6 @@ export default function Contact() {
         console.log(myMessage);
     }, [myMessage]);
 
-    function eatFood() {
-        alert("Form has been submitted");
-    }
-
     function test() {
         console.log(myMessage);
         fetch("/api/form", {
@@ -26,7 +22,6 @@ export default function Contact() {
             },
             body: JSON.stringify(myMessage),
         });
-        eatFood();
     }
 
     return (
