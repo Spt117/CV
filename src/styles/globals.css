@@ -42,7 +42,7 @@ body {
     padding: 1rem;
     padding-bottom: 0%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
-    overflow: hidden;
+    overflow: auto;
     margin: 1%;
 }
 .child1 P {
@@ -59,8 +59,12 @@ body {
     justify-content: space-around;
 }
 
+#maFiche {
+    margin-bottom: 5%;
+}
+
 #Présentation {
-    margin: 5%;
+    margin: 3%;
 }
 
 #Stack {
@@ -82,8 +86,8 @@ td {
 
 #contain-social {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
-    align-items: flex-end;
 }
 .social {
     width: 2em;
@@ -115,6 +119,7 @@ iframe {
 
 #contact-titre {
     text-align: center;
+    margin-bottom: 10%;
 }
 #formulaire {
     color: aliceblue;
@@ -279,7 +284,9 @@ textarea {
     color: #ffffff;
     transition: 350ms;
 }
-
+footer {
+    margin-top: 3%;
+}
 .icones {
     margin: 1%;
 }
@@ -292,7 +299,7 @@ textarea {
 
 #notif {
     border-radius: 10px;
-    background-color: rgba(122, 218, 237, 0.6);
+    background-color: rgb(255, 255, 255, 0.5);
     text-align: center;
     color: #000;
     position: absolute;
@@ -305,11 +312,9 @@ textarea {
 @keyframes anim {
     0% {
         transform: scale(0);
-        transform-origin: 100% 50%;
     }
 
     100% {
         transform: scale(1);
-        transform-origin: 100% 50%;
     }
 }

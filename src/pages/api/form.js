@@ -10,7 +10,7 @@ export default async (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: "contact@jb-fund.com",
+            user: process.env.mail,
             pass: process.env.password,
         },
     });

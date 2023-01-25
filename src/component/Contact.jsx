@@ -27,10 +27,16 @@ export default function Contact() {
     }
 
     function notification() {
-        let divAlert = document.querySelector("#notif");
+        const btn = document.querySelector("#form-btn");
+        const form = document.querySelector("#myForm");
+        const divAlert = document.querySelector("#notif");
+        form.style.display = "none";
+        btn.style.display = "none";
         divAlert.style.display = "block";
         setTimeout(() => {
             divAlert.style.display = "none";
+            form.style.display = "block";
+            btn.style.display = "block";
         }, 6000);
     }
 
@@ -83,7 +89,7 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
-            <button onClick={sendForm} className="btn">
+            <button onClick={sendForm} className="btn" id="form-btn">
                 Envoyer
             </button>
         </div>
