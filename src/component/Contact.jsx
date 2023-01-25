@@ -1,3 +1,5 @@
+import Notification from "./Notification.jsx";
+
 export default function Contact() {
     let myMessage = {
         firstName: "",
@@ -10,6 +12,7 @@ export default function Contact() {
     function init() {
         const form = document.querySelector("#myForm");
         form.reset();
+        notification();
     }
 
     function sendForm() {
@@ -23,8 +26,19 @@ export default function Contact() {
         init();
     }
 
+    function notification() {
+        let divAlert = document.querySelector("#notif");
+        divAlert.style.display = "block";
+        setTimeout(() => {
+            divAlert.style.display = "none";
+        }, 6000);
+    }
+
     return (
         <div id="formulaire">
+            <div id="container-notification">
+                <Notification />
+            </div>
             <h1 id="contact-titre">Formulaire de contact</h1>
             <div>
                 <form id="myForm">

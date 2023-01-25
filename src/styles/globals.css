@@ -4,7 +4,6 @@ body {
     background-image: url("../assets/espace.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /* min-height: 100%; */
 }
 
 #__next {
@@ -38,9 +37,10 @@ body {
 
 .child1 {
     text-align: center;
-    background-color: rgb(142, 197, 252, 0.7);
+    background-color: rgb(142, 197, 252, 0.5);
     border-radius: 30px;
     padding: 1rem;
+    padding-bottom: 0%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.8);
     overflow: hidden;
     margin: 1%;
@@ -88,7 +88,7 @@ td {
 .social {
     width: 2em;
     height: 2em;
-    margin: 1em;
+    margin: 0.4em;
 }
 
 iframe {
@@ -142,8 +142,7 @@ textarea {
 }
 
 textarea {
-    /* width: 100%; */
-    height: 50px;
+    height: 15em;
     margin-top: 3%;
     margin-bottom: 3%;
 }
@@ -266,7 +265,7 @@ textarea {
 }
 
 .btn {
-    background-color: orange;
+    background-color: rgb(255, 165, 0, 0.5);
     border: 1px solid orange;
     color: white;
     padding: 10px 20px;
@@ -276,7 +275,41 @@ textarea {
 
 .btn:hover {
     background-color: transparent;
-    border-color: #1e1e1e;
-    color: #1e1e1e;
+    border-color: #ffffff;
+    color: #ffffff;
     transition: 350ms;
+}
+
+.icones {
+    margin: 1%;
+}
+
+#container-notification {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#notif {
+    border-radius: 10px;
+    background-color: rgba(122, 218, 237, 0.6);
+    text-align: center;
+    color: #000;
+    position: absolute;
+    padding: 1em;
+    margin-top: 10%;
+    display: none;
+    animation-duration: 1s;
+    animation-name: anim;
+}
+@keyframes anim {
+    0% {
+        transform: scale(0);
+        transform-origin: 100% 50%;
+    }
+
+    100% {
+        transform: scale(1);
+        transform-origin: 100% 50%;
+    }
 }

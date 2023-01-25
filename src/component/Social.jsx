@@ -8,7 +8,7 @@ export default function Social() {
     return (
         <footer>
             <div id="contain-social">
-                <div>
+                <div className="icones">
                     <a
                         href="https://www.linkedin.com/in/jbfund/"
                         title="Mon Linkedin"
@@ -20,17 +20,17 @@ export default function Social() {
                         />{" "}
                     </a>
                 </div>
-                <div>
+                <div className="icones">
                     <a href="https://github.com/Spt117" title="Mon Github">
                         <Image src={Github} alt="Github" className="social" />
                     </a>
                 </div>
-                <div>
+                <div className="icones">
                     <a href="/portfolio" title="Mon Portfolio">
                         <Image src={Port} alt="Portfolio" className="social" />
                     </a>
                 </div>
-                <div>
+                <div className="icones">
                     <a href="/contact" title="Contactez-moi !">
                         <Image src={Cont} alt="Contact" className="social" />
                     </a>
