@@ -16,29 +16,12 @@ export default async (req, res) => {
     });
 
     console.log(body);
-    // transporter.verify(function (error, success) {
-    //     if (error) {
-    //         console.log("ça ne marche pas", error);
-    //     } else {
-    //         console.log("Server is ready to take our messages");
-    //     }
-    // });
-
-    // const mailData = {
-    //     from: "<contact@jb-fund.com>",
-    //     to: "blockchaindeveloppeur@gmail.com",
-    //     subject: `Message de ${body.name}`,
-    //     text: body.message + " | Sent from: " + body.email,
-    //     html: `<div>${body.message}</div><p>Sent from:
-    //     ${body.email}</p>`,
-    // };
 
     let info = await transporter.sendMail({
-        from: '"John Doeuf 🌚"<contact1010@jb-fund.com>', // sender address
-        to: "theshitcoinert@gmail.com", // list of receivers
-        subject: body.email, // Subject line
-        text: body.message, // plain text body
-        html: `<b>${body.message}</b>`, // html body
+        from: `<${body.email}>`, // sender address
+        to: process.env.mail, // list of receivers
+        subject: `Message de ${body.name} ${body.firstName}`, // Subject line
+        html: `${body.message}`, // html body
     });
 
     console.log("Message sent: %s", info.messageId);
