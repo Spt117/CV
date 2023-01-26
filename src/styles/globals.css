@@ -327,12 +327,45 @@ footer {
     }
 }
 
-#div-menu {
-    background-color: #00ffd5;
+#div-menu li {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-menu,
-ul {
+#div-menu button {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: large;
+}
+
+menu {
+    margin-top: 2rem;
+    margin-bottom: 0;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+#div-menu a {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 32px;
+    color: transparent;
+    -webkit-text-stroke: 0.5px #1d3628;
+    background: url("../assets/bojar.jpg");
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    background-size: cover;
+    animation: back 20s linear infinite;
+    background-clip: text;
 }
