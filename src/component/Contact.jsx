@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Notification from "./Notification.jsx";
-import Social from "./Social.jsx";
+import Image from "next/image.js";
+import Icone from "../assets/mail.png";
 
 export default function Contact() {
     const [notif, setNotif] = useState("");
@@ -120,12 +121,13 @@ export default function Contact() {
                                     (myMessage.message = e.target.value)
                                 }
                             ></textarea>
-                            <sub>* obligatoire</sub>
+                            <sub>* Ces champs sont obligatoires</sub>
                         </div>
                     </form>
                 </div>
                 <button onClick={sendForm} className="btn" id="form-btn">
-                    Envoyer
+                    <p id="p-button">Envoyer</p>
+                    <Image src={Icone} id="envoyer" className="social" />
                 </button>
             </div>
         </div>

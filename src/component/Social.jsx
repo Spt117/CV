@@ -17,7 +17,7 @@ export default function Social() {
                             src={Linkedin}
                             alt="Linkedin"
                             className="social"
-                        />{" "}
+                        />
                     </a>
                 </div>
                 <div className="icones">

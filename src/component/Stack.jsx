@@ -22,14 +22,14 @@ export default function Stack() {
                     </tr>
                     <tr>
                         <td>FlexBox / Bootstrap</td>
-                        <td>PHP / SQL</td>
+                        <td>Node / Express js</td>
                         <td>HardHat / Truffle</td>
                         <td>WordPress</td>
                         <td>Vercel</td>
                     </tr>
                     <tr>
                         <td>Javascript</td>
-                        <td>Node / Express js</td>
+                        <td>Next js</td>
                         <td>Ether js / Web3 js</td>
                         <td></td>
                         <td></td>

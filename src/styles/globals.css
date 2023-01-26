@@ -101,6 +101,18 @@ td {
     height: 2em;
     margin: 0.4em;
 }
+.social:hover {
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 iframe {
     margin-top: 1%;
@@ -120,7 +132,6 @@ iframe {
 .image {
     width: 300px;
     height: 205px;
-    max-width: 100%;
     border-radius: 3%;
 }
 
@@ -245,6 +256,34 @@ sub {
 
 #retour {
     margin: 1em;
+    animation: myAnim 2s linear 5s 3 normal forwards;
+}
+@keyframes myAnim {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+    }
+
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+    }
+
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
 }
 
 .container-site h3 {
@@ -288,9 +327,11 @@ sub {
 
 .btn:hover {
     background-color: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: white;
     transition: 350ms;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 1px 30px;
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 footer {
     margin-top: 3%;
@@ -302,7 +343,6 @@ footer {
 #container-notification {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
 
 #notif {
@@ -338,6 +378,11 @@ footer {
     color: white;
     border: none;
     font-size: large;
+    border-radius: 2em;
+}
+.from-center:hover {
+    box-shadow: rgba(255, 255, 255) 0 1px 30px;
+    transition-duration: 0.1s;
 }
 
 menu {
@@ -368,4 +413,18 @@ menu {
     background-size: cover;
     animation: back 20s linear infinite;
     background-clip: text;
+}
+
+#form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+#envoyer {
+    border: #000;
+}
+#p-button {
+    margin-right: 0.2em;
 }

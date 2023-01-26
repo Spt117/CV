@@ -22,11 +22,6 @@ export default function AboutMe() {
                 <br /> Je suis passionné par les nouvelles technologies comme la
                 Blockchain, et j'aime découvrir de nouveaux langages et de
                 nouveaux frameworks !<br />
-                <br /> Vous pouvez retrouver mon portfolio{" "}
-                <a href="/portfolio" className="abutton">
-                    ici
-                </a>{" "}
-                !
             </p>
         </div>
     );

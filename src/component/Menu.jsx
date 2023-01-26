@@ -4,17 +4,17 @@ export default function Menu() {
             <menu>
                 <li>
                     <a href="/">
-                        <button>Accueil</button>
+                        <button className="from-center">Accueil</button>
                     </a>
                 </li>
                 <li>
                     <a href="/portfolio">
-                        <button>Portfolio</button>
+                        <button className="from-center">Portfolio</button>
                     </a>
                 </li>
                 <li>
                     <a href="/contact">
-                        <button>Contactez-moi</button>
+                        <button className="from-center">Contactez-moi</button>
                     </a>
                 </li>
             </menu>
