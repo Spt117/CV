@@ -49,7 +49,7 @@ export default function Contact() {
             <h1 id="contact-titre">Formulaire de contact</h1>
             <div>
                 <form id="myForm">
-                    <div id="inputs">
+                    <div id="name">
                         <input
                             className="init"
                             type="text"
@@ -66,14 +66,14 @@ export default function Contact() {
                                 (myMessage.firstName = e.target.value)
                             }
                         />
-                        <input
-                            className="init"
-                            type="email"
-                            placeholder="e-mail"
-                            required="required"
-                            onChange={(e) => (myMessage.email = e.target.value)}
-                        />
                     </div>
+                    <input
+                        className="init"
+                        type="email"
+                        placeholder="e-mail"
+                        required="required"
+                        onChange={(e) => (myMessage.email = e.target.value)}
+                    />
                     <div id="mymessage">
                         <textarea
                             className="init"
