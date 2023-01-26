@@ -1,10 +1,7 @@
-export default function Notification() {
+export default function Notification({ notif }) {
     return (
         <div id="notif">
-            <p>
-                Votre message a bien été envoyé, je vous répondrai sous 24
-                heures !
-            </p>
+            <p>{notif}</p>
         </div>
     );
 }

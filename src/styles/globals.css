@@ -123,8 +123,9 @@ iframe {
     margin-bottom: 10%;
 }
 #formulaire {
-    padding: 3em;
+    padding-top: 1em !important;
     margin-top: 1em;
+    padding: 3rem;
     color: aliceblue;
     background-color: rgb(142, 197, 252, 0.5);
     border-radius: 30px;
