@@ -5,8 +5,11 @@ export default function Document() {
         <Html lang="en">
             <Head />
             <body>
-                <Main />
-                <NextScript />
+                <div id="bg"></div>
+                <div id="bt">
+                    <Main />
+                    <NextScript />
+                </div>
             </body>
         </Html>
     );

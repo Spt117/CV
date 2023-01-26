@@ -1,8 +1,9 @@
 html,
 body {
     margin: 0%;
-    background-image: url("../assets/espace.jpg");
+    /* opacity: 0.5; */
     background-size: cover;
+    background-image: url("../assets/blue.jpg");
     background-repeat: no-repeat;
 }
 
