@@ -4,7 +4,7 @@ import Stack from "@/component/Stack.jsx";
 
 export default function Home() {
     return (
-        <div className="child1">
+        <div className="child1" id="AboutMe">
             <AboutMe />
             <Stack />
             <Social />

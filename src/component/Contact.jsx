@@ -11,7 +11,7 @@ export default function Contact() {
     let myMessage = {
         firstName: "",
         name: "",
-        entreprise: "",
+        subject: "",
         email: "",
         message: "",
     };
@@ -20,7 +20,8 @@ export default function Contact() {
         const name = document.querySelector("#form-name");
         const mail = document.querySelector("#form-mail");
         const text = document.querySelector("#form-text");
-        if (name.value && mail.value && text.value) return true;
+        const objet = document.querySelector("#form-subject");
+        if (name.value && mail.value && text.value && objet) return true;
         else return false;
     }
 
@@ -68,17 +69,16 @@ export default function Contact() {
             <div id="container-notification">
                 <Notification notif={notif} />
             </div>
-            <div id="formulaire">
+            <div className="child1" id="myForm">
                 <h1 id="contact-titre">Formulaire de contact</h1>
                 <div>
-                    <form id="myForm">
+                    <form>
                         <div id="name">
                             <input
                                 id="form-name"
                                 className="init"
                                 type="text"
-                                required="required"
-                                placeholder="Nom"
+                                placeholder="*Nom"
                                 onChange={(e) =>
                                     (myMessage.name = e.target.value)
                                 }
@@ -86,7 +86,6 @@ export default function Contact() {
                             <input
                                 className="init"
                                 type="text"
-                                required="required"
                                 placeholder="Prénom"
                                 onChange={(e) =>
                                     (myMessage.firstName = e.target.value)
@@ -97,23 +96,31 @@ export default function Contact() {
                             id="form-mail"
                             className="init"
                             type="email"
-                            placeholder="e-mail"
-                            required="required"
+                            placeholder="*e-mail"
                             onChange={(e) => (myMessage.email = e.target.value)}
+                        />
+                        <input
+                            id="form-subject"
+                            className="init"
+                            type="text"
+                            placeholder="*Objet"
+                            onChange={(e) =>
+                                (myMessage.subject = e.target.value)
+                            }
                         />
                         <div id="mymessage">
                             <textarea
                                 className="init"
-                                required="required"
                                 name="message"
                                 id="form-text"
                                 // cols="70"
                                 // rows="20"
-                                placeholder="Votre message..."
+                                placeholder="*Votre message..."
                                 onChange={(e) =>
                                     (myMessage.message = e.target.value)
                                 }
                             ></textarea>
+                            <sub>* obligatoire</sub>
                         </div>
                     </form>
                 </div>
