@@ -80,7 +80,9 @@ export default function Portfolio() {
                 ))}
             </div>
             <a href="/">
-                <button className="glow-on-hover">Retour</button>
+                <button id="retour" className="glow-on-hover">
+                    Retour
+                </button>
             </a>
         </div>
     );

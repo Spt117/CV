@@ -1,10 +1,11 @@
 html,
 body {
     margin: 0%;
-    /* opacity: 0.5; */
+    padding: 1%;
     background-size: cover;
     background-image: url("../assets/blue.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #__next {
@@ -48,6 +49,10 @@ body {
 }
 .child1 P {
     text-align: justify;
+}
+
+#retour {
+    margin: 1rem;
 }
 
 #myflex {
@@ -284,6 +289,7 @@ textarea {
     border-color: #ffffff;
     color: #ffffff;
     transition: 350ms;
+    cursor: pointer;
 }
 footer {
     margin-top: 3%;

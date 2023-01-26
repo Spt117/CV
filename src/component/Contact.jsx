@@ -1,4 +1,5 @@
 import Notification from "./Notification.jsx";
+import Social from "./Social.jsx";
 
 export default function Contact() {
     let myMessage = {
