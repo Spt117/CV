@@ -8,7 +8,7 @@ export default function AboutMe() {
             <div className="container" id="maFiche">
                 <div id="titres">
                     <h1>Jean-Baptiste Fund</h1>
-                    <h3>Développeur Web FullStack</h3>
+                    <h2>Développeur Web FullStack</h2>
                 </div>
                 <div id="moncercle">
                     <Image src={Photo} id="id" alt="photo" />
