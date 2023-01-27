@@ -146,7 +146,7 @@ export default function Contact() {
                 </div>
                 <button onClick={sendForm} className="btn" id="form-btn">
                     {!bool && <p id="p-button">Envoyer</p>}
-                    {bool && <p id="p-button">Formulaire non valide</p>}
+                    {bool && <p id="p-button">Formulaire non rempli</p>}
                     {!bool && (
                         <Image
                             src={Icone}

@@ -1,6 +1,6 @@
 import Image from "next/image.js";
+import React from "react";
 import Photo from "../assets/photo-identite.png";
-import Stack from "./Stack.jsx";
 
 export default function AboutMe() {
     return (

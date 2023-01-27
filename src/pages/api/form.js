@@ -20,7 +20,7 @@ export default async (req, res) => {
     let info = await transporter.sendMail({
         from: `<${body.email}>`, // sender address
         to: process.env.mail, // list of receivers
-        subject: `Message de ${body.name} ${body.firstName}`, // Subject line
+        subject: `Message de ${body.name} ${body.firstName}, objet : ${body.objet}`, // Subject line
         html: `${body.message}`, // html body
     });
 
