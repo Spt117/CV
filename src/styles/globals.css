@@ -324,8 +324,16 @@ sub {
     width: 100%;
     border-radius: 2em;
 }
+.btn:disabled {
+    border: 1px solid #999999;
+    pointer-events: none;
+    background-color: #edf1f2;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
 
-.btn:hover {
+.btn:hover:enabled {
     background-color: transparent;
     border-color: white;
     transition: 350ms;

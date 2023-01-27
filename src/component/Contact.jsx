@@ -1,29 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Notification from "./Notification.jsx";
 import Image from "next/image.js";
 import Icone from "../assets/mail.png";
+import Stop from "../assets/interdit.png";
 
 export default function Contact() {
-    const [notif, setNotif] = useState("");
-    const formValide =
-        "Votre message a bien été envoyé, je vous répondrai sous 24 heures !";
-    const formInvalide =
-        "Vous n'avez pas rempli toutes les cases nécessaires !";
-    let myMessage = {
+    const obj = {
         firstName: "",
         name: "",
-        subject: "",
+        objet: "",
         email: "",
         message: "",
     };
+    const [msg, setMsg] = useState(obj);
+    const [bool, setBool] = useState(false);
+
+    useEffect(() => {
+        valideForm();
+    }, [msg]);
 
     function valideForm() {
+        const button = document.querySelector("#form-btn");
         const name = document.querySelector("#form-name");
         const mail = document.querySelector("#form-mail");
         const text = document.querySelector("#form-text");
         const objet = document.querySelector("#form-subject");
-        if (name.value && mail.value && text.value && objet) return true;
-        else return false;
+        if (name.value && mail.value && text.value && objet.value) {
+            button.disabled = false;
+            setBool(false);
+        } else {
+            button.disabled = true;
+            setBool(true);
+        }
     }
 
     function api() {
@@ -32,12 +40,12 @@ export default function Contact() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(myMessage),
+            body: JSON.stringify(msg),
         });
     }
 
     function notification() {
-        const form = document.querySelector("#formulaire");
+        const form = document.querySelector("#myForm");
         const divAlert = document.querySelector("#notif");
         form.style.display = "none";
         divAlert.style.display = "block";
@@ -48,32 +56,28 @@ export default function Contact() {
     }
 
     function init() {
-        const form = document.querySelector("#myForm");
+        const form = document.querySelector("#theForm");
         form.reset();
         notification();
     }
 
     function sendForm() {
-        if (valideForm()) {
-            api();
-            setNotif(formValide);
-            init();
-            notification();
-        } else {
-            setNotif(formInvalide);
-            notification();
-        }
+        api();
+        init();
+        notification();
+        valideForm();
+        setMsg(obj);
     }
 
     return (
         <div>
             <div id="container-notification">
-                <Notification notif={notif} />
+                <Notification />
             </div>
             <div className="child1" id="myForm">
                 <h1 id="contact-titre">Formulaire de contact</h1>
                 <div>
-                    <form>
+                    <form id="theForm">
                         <div id="name">
                             <input
                                 id="form-name"
@@ -81,7 +85,10 @@ export default function Contact() {
                                 type="text"
                                 placeholder="*Nom"
                                 onChange={(e) =>
-                                    (myMessage.name = e.target.value)
+                                    setMsg({
+                                        ...msg,
+                                        name: e.target.value,
+                                    })
                                 }
                             />
                             <input
@@ -89,7 +96,10 @@ export default function Contact() {
                                 type="text"
                                 placeholder="Prénom"
                                 onChange={(e) =>
-                                    (myMessage.firstName = e.target.value)
+                                    setMsg({
+                                        ...msg,
+                                        firstName: e.target.value,
+                                    })
                                 }
                             />
                         </div>
@@ -98,7 +108,12 @@ export default function Contact() {
                             className="init"
                             type="email"
                             placeholder="*e-mail"
-                            onChange={(e) => (myMessage.email = e.target.value)}
+                            onChange={(e) =>
+                                setMsg({
+                                    ...msg,
+                                    email: e.target.value,
+                                })
+                            }
                         />
                         <input
                             id="form-subject"
@@ -106,7 +121,10 @@ export default function Contact() {
                             type="text"
                             placeholder="*Objet"
                             onChange={(e) =>
-                                (myMessage.subject = e.target.value)
+                                setMsg({
+                                    ...msg,
+                                    objet: e.target.value,
+                                })
                             }
                         />
                         <div id="mymessage">
@@ -114,11 +132,12 @@ export default function Contact() {
                                 className="init"
                                 name="message"
                                 id="form-text"
-                                // cols="70"
-                                // rows="20"
                                 placeholder="*Votre message..."
                                 onChange={(e) =>
-                                    (myMessage.message = e.target.value)
+                                    setMsg({
+                                        ...msg,
+                                        message: e.target.value,
+                                    })
                                 }
                             ></textarea>
                             <sub>* Ces champs sont obligatoires</sub>
@@ -126,8 +145,24 @@ export default function Contact() {
                     </form>
                 </div>
                 <button onClick={sendForm} className="btn" id="form-btn">
-                    <p id="p-button">Envoyer</p>
-                    <Image src={Icone} id="envoyer" className="social" />
+                    {!bool && <p id="p-button">Envoyer</p>}
+                    {bool && <p id="p-button">Formulaire non valide</p>}
+                    {!bool && (
+                        <Image
+                            src={Icone}
+                            id="envoyer"
+                            className="social"
+                            alt="Mail"
+                        />
+                    )}
+                    {bool && (
+                        <Image
+                            src={Stop}
+                            id="envoyer"
+                            className="social"
+                            alt="Interdit"
+                        />
+                    )}
                 </button>
             </div>
         </div>
