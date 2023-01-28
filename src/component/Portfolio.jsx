@@ -12,7 +12,8 @@ export default function Portfolio() {
     async function getSites() {
         const api = await fetch("/api/sites");
         const data = await api.json();
-        setSites(data.posts.reverse());
+        console.log(data);
+        setSites(data.reverse());
     }
 
     return (
