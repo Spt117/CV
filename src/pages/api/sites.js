@@ -1,8 +1,9 @@
-class Site {
-    constructor(name, url, description, techno) {}
-}
+import clientPromise from "../../lib/mongodb";
 
-const mySites = [{}];
-export default function handler(req, res) {
-    res.status(200).json({ name: "John Doe" });
-}
+// sans utiliser de modèle
+export default async (req, res) => {
+    const client = await clientPromise;
+    const db = client.db("Portfolio");
+    const posts = await db.collection("sites").find({}).toArray();
+    res.status(200).send({ posts });
+};

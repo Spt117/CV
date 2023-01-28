@@ -1,44 +1,19 @@
 import Image from "next/image.js";
+import { useEffect, useState } from "react";
+import beyblade from "../assets/beyblade-shop.png";
 
 export default function Portfolio() {
-    const sites = [
-        {
-            titre: "Beyblade Shop",
-            image: "https://jb-fund.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbeyblade-shop.7f448b8f.png&w=1080&q=75",
-            url: "https://beyblade-shop.com",
-            description:
-                "Ma première réussite, un site d'ecommerce sur Shopify avec plus de 300 visiteurs quotidiens grâce à une acquisition de traffic en SEO.",
-            techno: "Shopify",
-        },
-        {
-            titre: "Plateforme de vote",
-            url: "https://vote-test.vercel.app/",
-            description:
-                "Création d'une plateforme de vote en ligne utilisant la technologie de la blockchain. Possibilité de la tester sur les testnets d'Ethereum.",
-            techno: "React côté Front-end et j'ai utilisé la librairie Ether js ainsi qu'Hardhat pour le développement du SC.",
-        },
-        {
-            titre: "Staking Factory",
-            url: "https://stacking-factory.vercel.app/Stacking",
-            description:
-                "Création d'une plateforme de Staking sur la blockchain Ethereum, possibilité d'ajouter des pools et de choisir le rendement.",
-            techno: "React pour le Front-end, j'ai utilisé la librairie Ether js pour communiquer avec les SmartContracts. Pour le développement et le déploiement de ceux-ci, je me suis servi de Hardhat. ",
-        },
-        {
-            titre: "Exercice Particeep",
-            url: "https://particeep-test-theta.vercel.app/",
-            description:
-                "Petit site de présentation de films, demandé par l'entreprise Particeep !",
-            techno: "React et le State Manager Redux, Vercel pour le déploiement.",
-        },
-        {
-            titre: "Les Argonautes",
-            url: "https://argonautes-front.vercel.app/",
-            description:
-                "Petit exercice FullStack dans le cadre de mon apprentissage.",
-            techno: "React côté Front-end, un serveur Node-Express Js avec une base de donnée MongoDB côté Backend. J'ai utilisé Vercel à la fois pour le serveur et pour le Front.",
-        },
-    ];
+    const [sites, setSites] = useState([]);
+
+    useEffect(() => {
+        getSites();
+    }, []);
+
+    async function getSites() {
+        const api = await fetch("/api/sites");
+        const data = await api.json();
+        setSites(data.posts.reverse());
+    }
 
     return (
         <div className="child1" id="myflex">
@@ -47,14 +22,12 @@ export default function Portfolio() {
                 {sites.map((site, index) => (
                     <div key={index} className="container-site">
                         <h3>{site.titre}</h3>
-                        {site.image ? (
+                        {site.image === "beyblade" ? (
                             <div className="container-image">
                                 <a href={site.url}>
                                     <Image
-                                        src={site.image}
+                                        src={beyblade}
                                         className="image"
-                                        width={2250}
-                                        height={1390}
                                         alt={site.titre}
                                     />
                                 </a>
