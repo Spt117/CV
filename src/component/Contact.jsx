@@ -52,7 +52,7 @@ export default function Contact() {
         setTimeout(() => {
             divAlert.style.display = "none";
             form.style.display = "block";
-        }, 3000);
+        }, 5000);
     }
 
     function init() {

@@ -26,8 +26,12 @@ export default function Menu() {
                     </a>
                 </li>
                 <div id="container-mode">
-                    <li id="wrapper" style={{ display: "block" }}>
-                        <input type="checkbox" id="hide-checkbox" />
+                    <li id="wrapper">
+                        <input
+                            type="checkbox"
+                            id="hide-checkbox"
+                            onChange={test}
+                        />
                         <label htmlFor="hide-checkbox" className="toggle">
                             <span className="toggle-button">
                                 <span className="crater crater-1"></span>

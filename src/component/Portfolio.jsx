@@ -1,11 +1,10 @@
 import Image from "next/image.js";
-import beyblade from "../assets/beyblade-shop.png";
 
 export default function Portfolio() {
     const sites = [
         {
             titre: "Beyblade Shop",
-            image: beyblade,
+            image: "https://jb-fund.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbeyblade-shop.7f448b8f.png&w=1080&q=75",
             url: "https://beyblade-shop.com",
             description:
                 "Ma première réussite, un site d'ecommerce sur Shopify avec plus de 300 visiteurs quotidiens grâce à une acquisition de traffic en SEO.",
@@ -54,6 +53,8 @@ export default function Portfolio() {
                                     <Image
                                         src={site.image}
                                         className="image"
+                                        width={2250}
+                                        height={1390}
                                         alt={site.titre}
                                     />
                                 </a>
