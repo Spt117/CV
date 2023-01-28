@@ -51,7 +51,11 @@ export default function Portfolio() {
                         {site.image ? (
                             <div className="container-image">
                                 <a href={site.url}>
-                                    <Image src={site.image} className="image" />
+                                    <Image
+                                        src={site.image}
+                                        className="image"
+                                        alt={site.titre}
+                                    />
                                 </a>
                             </div>
                         ) : (

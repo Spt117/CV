@@ -2,16 +2,25 @@ html,
 body {
     margin: 0%;
     background-size: cover;
-    background-image: url("../assets/blue.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-size: large;
+}
+
+#blue {
+    background-image: url("../assets/blue.jpg");
+}
+#moutain {
+    background-image: url("../assets/montagne.jpg");
 }
 
 #__next {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.child {
+    overflow: auto;
 }
 .container {
     display: flex;
@@ -456,15 +465,17 @@ menu {
     margin-right: 0.2em;
 }
 
-#wrapper {
+#container-mode {
     display: flex;
     align-items: flex-end;
+    margin-bottom: -0.3%;
 }
 
 #hide-checkbox {
     opacity: 0;
     height: 0;
     width: 0;
+    position: absolute;
 }
 
 .toggle {
