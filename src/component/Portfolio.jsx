@@ -12,14 +12,13 @@ export default function Portfolio() {
     async function getSites() {
         const api = await fetch("/api/sites");
         const data = await api.json();
-        console.log(data);
         setSites(data.reverse());
     }
 
     return (
         <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
-            {sites.length === 0 && <div class="lds-dual-ring"></div>}
+            {sites.length === 0 && <div className="lds-dual-ring"></div>}
             <div id="portfolio">
                 {sites.map((site, index) => (
                     <div key={index} className="container-site">
@@ -62,6 +61,11 @@ export default function Portfolio() {
             <a href="/">
                 <button id="retour" className="glow-on-hover">
                     Retour
+                </button>
+            </a>
+            <a href="/ns">
+                <button id="retour" className="glow-on-hover">
+                    Ajouter
                 </button>
             </a>
         </div>

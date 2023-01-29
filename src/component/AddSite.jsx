@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
-import { env } from "process";
-// const dotenv = require("dotenv");
-// dotenv.config();
+import { useState } from "react";
 
 export default function AddSite() {
     const [site, setSite] = useState(null);
     const [mdp, setMdp] = useState("");
 
-    const Mdp = process.env.REACT_APP_mdp;
-
-    useEffect(() => {
-        console.log(site);
-    }, [site]);
-
     async function sendSite() {
-        if (Mdp === mdp) {
+        const bool = await checkMdp();
+        if (bool) {
             const api = await fetch("/api/sites", {
                 method: "POST",
                 headers: {
@@ -24,7 +16,19 @@ export default function AddSite() {
             });
             const res = await api.json();
             console.log(res);
-        } else console.log(process.env.REACT_APP_mdp);
+        } else console.log("Mauvais mot de passe !");
+    }
+
+    async function checkMdp() {
+        const api = await fetch("/api/mdp", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(mdp),
+        });
+        const res = await api.json();
+        return res;
     }
 
     return (
