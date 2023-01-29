@@ -798,3 +798,13 @@ menu {
 #theForm2 {
     margin-bottom: 0.5rem;
 }
+#contain-button {
+    display: flex;
+    align-items: center;
+}
+#retour {
+    flex-grow: 1;
+}
+#add {
+    margin-left: auto;
+}

@@ -1,26 +1,16 @@
 import Image from "next/image.js";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import beyblade from "../assets/beyblade-shop.png";
 
 export default function Portfolio() {
-    const [sites, setSites] = useState([]);
-
-    useEffect(() => {
-        getSites();
-    }, []);
-
-    async function getSites() {
-        const api = await fetch("/api/sites");
-        const res = await api.json();
-        setSites(res.reverse());
-    }
+    const theSites = useSelector((state) => state.sites);
 
     return (
         <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
-            {sites.length === 0 && <div className="lds-dual-ring"></div>}
+            {theSites.length === 0 && <div className="lds-dual-ring"></div>}
             <div id="portfolio">
-                {sites.map((site, index) => (
+                {theSites.map((site, index) => (
                     <div key={index} className="container-site">
                         <h3>{site.titre}</h3>
                         {site.image === "beyblade" ? (
@@ -62,14 +52,14 @@ export default function Portfolio() {
                     </div>
                 ))}
             </div>
-            <a href="/">
-                <button id="retour" className="glow-on-hover">
-                    Retour
-                </button>
-            </a>
-            <a href="/ns">
-                <button className="glow-on-hover">Ajouter</button>
-            </a>
+            <div id="contain-button">
+                <a href="/" id="retour">
+                    <button className="glow-on-hover">Retour</button>
+                </a>
+                <a href="/ns" id="add">
+                    <button className="glow-on-hover">Ajouter</button>
+                </a>
+            </div>
         </div>
     );
 }
