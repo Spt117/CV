@@ -43,10 +43,14 @@ export default function Portfolio() {
                             ></iframe>
                         )}
                         <p>
-                            <b>Description :</b> {site.description}
+                            <b>Description :</b>
+                            <br />
+                            {site.description}
                             <br />
                             <br />
-                            <b>Technologies utilisées :</b> {site.techno}
+                            <b>Technologies utilisées :</b>
+                            <br />
+                            {site.techno}
                             <br />
                             <br />
                             <a href={site.url} className="buttons">

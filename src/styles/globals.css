@@ -67,6 +67,7 @@ body {
 
 #myflex {
     flex: 1;
+    margin: 1rem;
 }
 
 .child1 {
@@ -80,7 +81,8 @@ body {
     margin: 3rem;
 }
 .child1 P {
-    text-align: justify;
+    font-family: "Futura LT", sans-serif;
+    text-align: left;
 }
 
 #myForm {
@@ -152,7 +154,7 @@ iframe {
     margin: 1.5%;
     padding: 1%;
     background-color: rgba(44, 107, 179, 0.164);
-    text-align: justify;
+    /* text-align: justify; */
     width: 250px;
     position: relative;
 }
