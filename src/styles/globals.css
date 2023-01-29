@@ -350,6 +350,7 @@ sub {
     color: white;
     padding: 10px 20px;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     transition: 350ms;
     width: 100%;
     border-radius: 2em;
