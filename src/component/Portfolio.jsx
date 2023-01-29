@@ -19,6 +19,7 @@ export default function Portfolio() {
     return (
         <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
+            {sites.length === 0 && <div class="lds-dual-ring"></div>}
             <div id="portfolio">
                 {sites.map((site, index) => (
                     <div key={index} className="container-site">
