@@ -11,8 +11,8 @@ export default function Portfolio() {
 
     async function getSites() {
         const api = await fetch("/api/sites");
-        const data = await api.json();
-        setSites(data.reverse());
+        const res = await api.json();
+        setSites(res.reverse());
     }
 
     return (
@@ -68,9 +68,7 @@ export default function Portfolio() {
                 </button>
             </a>
             <a href="/ns">
-                <button id="retour" className="glow-on-hover">
-                    Ajouter
-                </button>
+                <button className="glow-on-hover">Ajouter</button>
             </a>
         </div>
     );
