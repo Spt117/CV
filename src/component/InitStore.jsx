@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { mySites } from "@/redux/actions.js";
 import { useEffect } from "react";
+import { mySites } from "@/redux/store.js";
 
 export default function InitStore() {
     const dispatch = useDispatch();

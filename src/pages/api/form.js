@@ -15,17 +15,25 @@ export default async (req, res) => {
         },
     });
 
-    console.log(body);
-
     let info = await transporter.sendMail({
-        from: `<${body.email}>`, // sender address
-        to: process.env.mail, // list of receivers
-        subject: `Message de ${body.name} ${body.firstName}, objet : ${body.objet}`, // Subject line
-        html: `${body.message}`, // html body
+        // sender address
+        from: `<${body.email}>`,
+        // list of receivers
+        to: process.env.mail,
+        // Subject line
+        subject: `Message de ${body.name} ${body.firstName}, objet : ${body.objet}`,
+        // html body
+        html: `${body.message}`,
     });
 
-    console.log("Message sent: %s", info.messageId);
+    // console.log("Message sent: %s", info.messageId);
 
     // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+    console.log(info.response);
+    console.log(info.rejected);
+    info.rejected.length === 0
+        ? res.status(201).json("Message envoyé")
+        : (error) => res.status(400).json({ error: error });
 };
