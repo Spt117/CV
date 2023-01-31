@@ -1,10 +1,29 @@
+import { setCookie, getCookie } from "cookies-next";
+import { useEffect } from "react";
+
 export default function Mode() {
+    useEffect(() => {
+        if (getCookie("mode") === "mountain") {
+            try {
+                setMountain();
+                document.querySelector("#hide-checkbox").checked = true;
+            } catch {}
+        }
+    }, []);
+
+    function setMountain() {
+        document.querySelector("#blue").id = "mountain";
+    }
+
     const changeMode = () => {
         try {
-            document.querySelector("#blue").id = "moutain";
+            setMountain();
+            setCookie("mode", "mountain");
         } catch {
-            document.querySelector("#moutain").id = "blue";
+            document.querySelector("#mountain").id = "blue";
+            setCookie("mode", "blue");
         }
+        console.log();
     };
 
     return (
