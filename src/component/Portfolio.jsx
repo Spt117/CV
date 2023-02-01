@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import beyblade from "../assets/beyblade-shop.png";
 
 export default function Portfolio() {
-    const theSites = useSelector((state) => state.sites);
+    const sites = useSelector((state) => state.sites);
 
     return (
         <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
-            {theSites.length === 0 && <div className="lds-dual-ring"></div>}
+            {sites.length === 0 && <div className="lds-dual-ring"></div>}
             <div id="portfolio">
-                {theSites.map((site, index) => (
+                {sites.map((site, index) => (
                     <div key={index} className="container-site">
                         <h3>{site.titre}</h3>
                         {site.image === "beyblade" ? (
