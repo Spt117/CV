@@ -1,4 +1,4 @@
-import { setCookie, getCookie } from "cookies-next";
+import { setCookie, getCookie, deleteCookie } from "cookies-next";
 import { useEffect } from "react";
 
 export default function Mode() {
@@ -15,16 +15,15 @@ export default function Mode() {
         document.querySelector("#blue").id = "mountain";
     }
 
-    const changeMode = () => {
+    function changeMode() {
         try {
             setMountain();
             setCookie("mode", "mountain");
         } catch {
             document.querySelector("#mountain").id = "blue";
-            setCookie("mode", "blue");
+            deleteCookie("mode");
         }
-        console.log();
-    };
+    }
 
     return (
         <div id="container-mode">
