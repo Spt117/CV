@@ -15,7 +15,7 @@ export default function Stack() {
                 <tbody>
                     <tr>
                         <td>HTML5 / CSS3</td>
-                        <td>Javascript</td>
+                        <td>Javascript / TypeScript</td>
                         <td>Solidity</td>
                         <td>Shopify</td>
                         <td>Github</td>
@@ -28,7 +28,7 @@ export default function Stack() {
                         <td>Vercel</td>
                     </tr>
                     <tr>
-                        <td>Javascript</td>
+                        <td>Javascript / TypeScript</td>
                         <td>Next js</td>
                         <td>Ether js / Web3 js</td>
                         <td></td>
