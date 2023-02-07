@@ -1,6 +1,13 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Background } from "@/components/Background";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+    return (
+        <Background>
+            <div id="container-child1">
+                <Component {...pageProps} />
+            </div>
+        </Background>
+    );
 }

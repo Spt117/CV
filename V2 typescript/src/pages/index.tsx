@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import AboutMe from "@/components/AboutMe";
+import Stack from "@/components/Stack";
+import Social from "@/components/Social";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Home(): JSX.Element {
     return (
         <>
             <Head>
@@ -20,6 +18,11 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <div className="child1" id="AboutMe">
+                <AboutMe />
+                <Stack />
+                <Social />
+            </div>
         </>
     );
 }
