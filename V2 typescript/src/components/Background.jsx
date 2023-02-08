@@ -13,16 +13,16 @@ const animSnowflakes = keyframes`
   from { transform: translateY(-2000px); }
   to { transform: translateY(0px); }
 `
-const random = (x: number) => Math.floor(Math.random() * x)
-const multipleBoxShadow = (length: number) => {
+const random = (x) => Math.floor(Math.random(x) * x)
+const multipleBoxShadow = (length) => {
     const biggestScreenSize = 2560
-    let value = `${random(biggestScreenSize)}px ${random(biggestScreenSize)}px #FFF`
-    for (let i in Array.from({ length })) {
+    var value = `${random(biggestScreenSize)}px ${random(biggestScreenSize)}px #FFF`
+    for (var i in Array.from({ length })) {
         value += `, ${random(biggestScreenSize)}px ${random(biggestScreenSize)}px #FFF`
     }
     return value
 }
-let snowflakes = (h: number, w: number, animationTime: number, shadow: number) => styled.div`
+var snowflakes = (h, w, animationTime, shadow) => styled.div`
     width: ${w}px;
     height: ${h}px;
     background: transparent;
@@ -41,11 +41,13 @@ const SmallSnowflakes = snowflakes(1, 1, 50, 700)
 const MediumSnowflakes = snowflakes(2, 2, 100, 200)
 const BigSnowflakes = snowflakes(3, 3, 150, 100)
 
-export const Background = ({ children, ...props }: { children: React.ReactNode }) => (
-    <Container {...props}>
-        {children}
-        <SmallSnowflakes />
-        <MediumSnowflakes />
-        <BigSnowflakes />
-    </Container>
-)
+export default function Background({ children, ...props }) {
+    return (
+        <Container {...props}>
+            {children}
+            <SmallSnowflakes />
+            <MediumSnowflakes />
+            <BigSnowflakes />
+        </Container>
+    )
+}

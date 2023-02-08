@@ -1,18 +1,18 @@
 html,
 body {
     margin: 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     font-size: large;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    max-height: 100v;
+    height: 100%;
 }
 
-#blue {
-    /* background-image: url("../assets/blue.jpg"); */
+/* #blue {
+    background-image: url("../assets/blue.jpg");
 }
 #mountain {
     background-image: url("../assets/montagne.jpg");
-}
+} */
 
 .child {
     overflow: auto;
@@ -72,7 +72,7 @@ body {
 
 .child1 {
     text-align: center;
-    background-color: rgb(142, 197, 252, 0.5);
+    background-color: rgb(142, 197, 252, 0.6);
     border-radius: 30px;
     padding: 1rem;
     padding-bottom: 0%;
@@ -126,12 +126,15 @@ td {
     justify-content: flex-end;
 }
 .social {
+    border-radius: 1rem;
     width: 2em;
     height: 2em;
     margin: 0.4em;
 }
 .social:hover {
     animation: myAnim 2s ease 0s 1 normal forwards;
+    box-shadow: rgba(255, 255, 255) 0 1px 30px;
+    transition-duration: 0.1s;
 }
 @keyframes myAnim {
     0% {
@@ -409,6 +412,7 @@ footer {
 #div-menu li {
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-top: 1rem;
 }
 
 #div-menu button {
@@ -426,8 +430,8 @@ footer {
 }
 
 menu {
-    margin-top: 2rem;
     margin-bottom: 0;
+    margin-top: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
