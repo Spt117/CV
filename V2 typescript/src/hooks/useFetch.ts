@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export default function useFetch(url: string) {
+export default function useFetch(url: string, objet?: object) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -11,7 +11,7 @@ export default function useFetch(url: string) {
     async function fetchData() {
         setLoading(true)
         try {
-            const res = await fetch(url)
+            const res = await fetch(url, objet)
             const data = await res.json()
             setData(data)
         } catch (err) {
