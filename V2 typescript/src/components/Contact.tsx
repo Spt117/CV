@@ -5,7 +5,7 @@ import Icone from "../assets/mail.png"
 import Stop from "../assets/interdit.png"
 
 export default function Contact(): JSX.Element {
-    const [bool, setBool] = useState(false)
+    const [bool, setBool] = useState<boolean>(false)
 
     useEffect(() => {}, [])
     return (
@@ -13,7 +13,7 @@ export default function Contact(): JSX.Element {
             <div id="container-notification"></div>
             <div className="child1" id="myForm">
                 <h1 id="contact-titre">Formulaire de contact</h1>
-                <FormMessage />
+                <FormMessage setBool={setBool} />
                 <button className="btn" id="form-btn">
                     {bool && <p id="p-button">Envoyer</p>}
                     {!bool && <p id="p-button">Formulaire non rempli</p>}
