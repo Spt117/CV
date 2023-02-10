@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb"
+
 export interface MessageObjet {
     firstName: string
     name: string
@@ -7,7 +9,7 @@ export interface MessageObjet {
 }
 
 export interface Site {
-    _id: string
+    _id: ObjectId
     titre: string
     url: string
     description: string
