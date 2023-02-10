@@ -13,7 +13,6 @@ export default function Home(): JSX.Element {
                     content="Retrouvez ici mon site, avec mon portfolio, mon stack, le tout implémenté avec Next.js !"
                 />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
             </Head>
             <div className="child1" id="AboutMe">
                 <AboutMe />
