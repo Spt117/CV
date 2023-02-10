@@ -1,23 +1,16 @@
-import Image from "next/image.js";
-import Github from "../assets/Github.png";
-import Linkedin from "../assets/LinkedIn.png";
-import Port from "../assets/portfolio.png";
-import Cont from "../assets/contact.png";
+import Image from "next/image.js"
+import Github from "../../assets/Github.png"
+import Linkedin from "../../assets/LinkedIn.png"
+import Port from "../../assets/portfolio.png"
+import Cont from "../../assets/contact.png"
 
 export default function Social(): JSX.Element {
     return (
         <footer>
             <div id="contain-social">
                 <div className="icones">
-                    <a
-                        href="https://www.linkedin.com/in/jbfund/"
-                        title="Mon Linkedin"
-                    >
-                        <Image
-                            src={Linkedin}
-                            alt="Linkedin"
-                            className="social"
-                        />
+                    <a href="https://www.linkedin.com/in/jbfund/" title="Mon Linkedin">
+                        <Image src={Linkedin} alt="Linkedin" className="social" />
                     </a>
                 </div>
                 <div className="icones">
@@ -37,5 +30,5 @@ export default function Social(): JSX.Element {
                 </div>
             </div>
         </footer>
-    );
+    )
 }

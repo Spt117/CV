@@ -1,5 +1,5 @@
-import Portfolio from "@/components/Portfolio";
+import Portfolio from "@/components/portfolio/Portfolio"
 
 export default function portfolio(): JSX.Element {
-    return <Portfolio />;
+    return <Portfolio />
 }

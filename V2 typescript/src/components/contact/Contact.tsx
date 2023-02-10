@@ -1,10 +1,10 @@
 import { useState } from "react"
 import FormMessage from "./FormMessage"
 import Image from "next/image.js"
-import Icone from "../assets/mail.png"
+import Icone from "../../assets/mail.png"
 import { button, obj } from "@/library/const"
 import { MessageObjet } from "@/library/interfaces"
-import Stop from "../assets/interdit.png"
+import Stop from "../../assets/interdit.png"
 import { fetchData, selectorById } from "@/library/functions"
 
 export default function Contact(): JSX.Element {

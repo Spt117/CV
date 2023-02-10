@@ -1,9 +1,9 @@
 import { Site } from "@/library/interfaces"
 import { ObjectId } from "mongodb"
-import { Schema, model, models } from "mongoose"
+import { Schema, model, models, Model } from "mongoose"
 // import uniqueValidator from "mongoose-unique-validator"
 
-const siteSchema = new Schema<Site>({
+const siteSchema: Schema<Site> = new Schema<Site>({
     _id: { type: ObjectId, required: false, unique: true },
     titre: { type: String, required: true },
     url: { type: String, required: true },
@@ -14,6 +14,6 @@ const siteSchema = new Schema<Site>({
 
 // userSchema.plugin(uniqueValidator)
 
-const Sites = models.sites || model("sites", siteSchema)
+const site: Model<Site> = models.sites || model("sites", siteSchema)
 
-export default Sites
+export default site

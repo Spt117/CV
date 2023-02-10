@@ -1,7 +1,7 @@
 import Head from "next/head"
-import AboutMe from "@/components/AboutMe"
-import Stack from "@/components/Stack"
-import Social from "@/components/Social"
+import AboutMe from "@/components/index/AboutMe"
+import Stack from "@/components/index/Stack"
+import Social from "@/components/index/Social"
 
 export default function Home(): JSX.Element {
     return (
