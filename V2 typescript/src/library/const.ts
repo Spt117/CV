@@ -1,3 +1,4 @@
+import { selectorById } from "./functions"
 import { MessageObjet } from "./interfaces"
 
 export const obj: MessageObjet = {
@@ -7,3 +8,5 @@ export const obj: MessageObjet = {
     email: "",
     message: "",
 }
+
+export const button = selectorById("form-btn") as HTMLButtonElement

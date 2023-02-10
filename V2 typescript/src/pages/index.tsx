@@ -1,7 +1,7 @@
-import Head from "next/head";
-import AboutMe from "@/components/AboutMe";
-import Stack from "@/components/Stack";
-import Social from "@/components/Social";
+import Head from "next/head"
+import AboutMe from "@/components/AboutMe"
+import Stack from "@/components/Stack"
+import Social from "@/components/Social"
 
 export default function Home(): JSX.Element {
     return (
@@ -12,11 +12,8 @@ export default function Home(): JSX.Element {
                     name="description"
                     content="Retrouvez ici mon site, avec mon portfolio, mon stack, le tout implémenté avec Next.js !"
                 />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
             </Head>
             <div className="child1" id="AboutMe">
                 <AboutMe />
@@ -24,5 +21,5 @@ export default function Home(): JSX.Element {
                 <Social />
             </div>
         </>
-    );
+    )
 }

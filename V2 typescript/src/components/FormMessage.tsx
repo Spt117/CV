@@ -1,22 +1,26 @@
-import { obj } from "@/library/const"
+import { button } from "@/library/const"
 import { checkMail, selectorById } from "@/library/functions"
 import { MessageObjet } from "@/library/interfaces"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
-export default function FormMessage({ setBool }: { setBool: React.Dispatch<React.SetStateAction<boolean>> }): JSX.Element {
-    const [msg, setMsg] = useState<MessageObjet>(obj)
+export default function FormMessage({
+    setBool,
+    msg,
+    setMsg,
+}: {
+    setBool: React.Dispatch<React.SetStateAction<boolean>>
+    msg: MessageObjet
+    setMsg: React.Dispatch<React.SetStateAction<MessageObjet>>
+}): JSX.Element {
     const form: string[] = ["form-name", "form-mail", "form-subject", "form-text"]
 
     function isValideForm(): boolean {
-        const button = selectorById("form-btn") as HTMLButtonElement
-
         let isFormValid = form.every((element) => {
             const selectedElement = selectorById(element)
             if (element === "form-mail") {
                 return checkMail(selectedElement as HTMLInputElement)
             } else return selectedElement !== null && (selectedElement as HTMLInputElement).value !== ""
         })
-
         button.disabled = !isFormValid
         setBool(isFormValid)
         return isFormValid
