@@ -1,5 +1,5 @@
 import { selectorById } from "./functions"
-import { MessageObjet } from "./interfaces"
+import { MessageObjet, Post } from "./interfaces"
 
 export const obj: MessageObjet = {
     firstName: "",

@@ -12,7 +12,7 @@ export function checkMail(HTMLElement: HTMLElement): boolean {
 export async function fetchData(url: string, objet?: object) {
     try {
         const data = await fetch(url, objet)
-        const res: string | Site[] = await data.json()
+        const res: string | Site[] | boolean = await data.json()
         if (objet !== undefined) console.log(res)
         return res
     } catch (err: any) {

@@ -1,5 +1,5 @@
 import Portfolio from "@/components/portfolio/Portfolio"
 
-export default function portfolio(): JSX.Element {
+export default function (): JSX.Element {
     return <Portfolio />
 }

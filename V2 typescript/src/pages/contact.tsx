@@ -1,5 +1,5 @@
 import Contact from "../components/contact/Contact"
 
-export default () => {
+export default (): JSX.Element => {
     return <Contact />
 }
