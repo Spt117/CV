@@ -2,7 +2,7 @@ import { useState } from "react"
 import { fetchData, selectorById } from "@/library/functions"
 import { buttonSendMessage, message } from "@/library/const"
 import { MessageObjet } from "@/library/interfaces"
-import { postRequest } from "@/library/class"
+import { request } from "@/library/class"
 import Icone from "../../assets/mail.png"
 import Stop from "../../assets/interdit.png"
 import FormMessage from "./FormMessage"
@@ -13,7 +13,7 @@ export default function Contact(): JSX.Element {
     const [msg, setMsg] = useState<MessageObjet>(message)
 
     async function sendMessage(): Promise<void> {
-        await fetchData("/api/form", new postRequest(msg))
+        await fetchData("/api/form", new request(msg, "POST"))
         ;(selectorById("theForm") as HTMLFormElement).reset()
         setBool(false)
         buttonSendMessage.disabled = true

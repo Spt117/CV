@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
-import Sites from "./Sites"
+import SiteElement from "./SiteElement"
 
 export default function Portfolio(): JSX.Element {
     const [sites, setSites] = useState<Site[]>([])
@@ -20,7 +20,9 @@ export default function Portfolio(): JSX.Element {
             <h1>Mon Portfolio</h1>
             {sites.length === 0 && <div className="lds-dual-ring"></div>}
             <div id="portfolio">
-                <Sites sites={sites} />
+                {sites.map((site: Site, index: number) => (
+                    <SiteElement key={index} site={site} />
+                ))}
             </div>
             <div id="contain-button">
                 <a href="/" id="retour">

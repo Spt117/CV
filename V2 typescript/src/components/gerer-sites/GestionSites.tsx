@@ -2,6 +2,7 @@ import { useState } from "react"
 import Mdp from "./Mdp"
 import AjoutSite from "./AjoutSite"
 import SupprimerSite from "./SupprimerSite"
+import UpdateSite from "./UpdateSite"
 
 export default function GestionSites(): JSX.Element {
     const [bool, setBool] = useState<boolean>(false)
@@ -14,6 +15,7 @@ export default function GestionSites(): JSX.Element {
                 <>
                     <AjoutSite bool={bool} />
                     <SupprimerSite />
+                    <UpdateSite />
                 </>
             )}
         </div>

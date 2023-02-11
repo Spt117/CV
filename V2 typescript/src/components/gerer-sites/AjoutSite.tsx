@@ -17,7 +17,6 @@ export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
             <h3>Ajouter un site</h3>
             <form id="theForm2">
                 <input
-                    id="form-name"
                     className="init"
                     type="text"
                     placeholder="Titre"
@@ -40,7 +39,6 @@ export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
                     }
                 />
                 <input
-                    id="form-mail"
                     className="init"
                     type="text"
                     placeholder="Description"
@@ -52,7 +50,6 @@ export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
                     }
                 />
                 <input
-                    id="form-subject"
                     className="init"
                     type="text"
                     placeholder="Technos utilisées"

@@ -149,6 +149,7 @@ iframe {
     width: 250px;
     border-radius: 1em;
 }
+
 .container-site {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 20px rgba(0, 0, 0, 0.8);
     border-radius: 20px;
@@ -158,6 +159,11 @@ iframe {
     /* text-align: justify; */
     width: 250px;
     position: relative;
+}
+
+#modifier-site {
+    display: flex;
+    justify-content: center;
 }
 
 .image {
@@ -798,4 +804,8 @@ menu {
 }
 #add {
     margin-left: auto;
+}
+
+#theForm3 {
+    display: none;
 }
