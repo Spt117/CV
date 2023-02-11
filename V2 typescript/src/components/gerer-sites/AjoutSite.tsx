@@ -1,4 +1,4 @@
-import { postRequest } from "@/library/class"
+import { request } from "@/library/class"
 import { siteObjet } from "@/library/const"
 import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
@@ -9,7 +9,7 @@ export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
 
     async function sendSite() {
         if (bool) {
-            await fetchData("/api/sites", new postRequest(site))
+            await fetchData("/api/sites", new request(site, "POST"))
         }
     }
     return (

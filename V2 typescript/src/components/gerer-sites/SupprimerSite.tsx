@@ -1,3 +1,4 @@
+import { request } from "@/library/class"
 import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
 import { useState } from "react"
@@ -10,7 +11,7 @@ export default function SupprimerSite(): JSX.Element {
             const sitesArray: Site[] = (await fetchData("/api/sites")) as Site[]
             const site: Site = sitesArray.find((site) => site.titre === siteName) as Site
             site?._id !== undefined
-                ? await fetchData(`/api/sites/${site._id}`, { method: "DELETE", body: JSON.stringify(site._id) })
+                ? await fetchData(`/api/sites/${site._id}`, new request(site._id, "DELETE"))
                 : console.log("Site non trouvé")
         } catch (error: any) {
             console.log(error)

@@ -10,7 +10,7 @@ export interface MessageObjet {
 
 export interface Site {
     _id?: ObjectId
-    save(): unknown
+    save(): Promise<Site>
     titre: string
     url: string
     description: string
@@ -18,7 +18,7 @@ export interface Site {
     techno: string
 }
 
-export interface PostRequest {
+export interface Request {
     method: string
     headers: { [key: string]: string }
     body: string

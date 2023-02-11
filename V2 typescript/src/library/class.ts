@@ -1,10 +1,10 @@
-import { MessageObjet, PostRequest, Site } from "./interfaces"
+import { MessageObjet, Request, Site } from "./interfaces"
 
-export class postRequest implements PostRequest {
+export class request implements Request {
     method: string
     headers: { "Content-Type": string }
     body: string
-    constructor(data: string | MessageObjet | Site, method: string = "POST") {
+    constructor(data: string | MessageObjet | Site, method: string) {
         this.method = method
         this.headers = {
             "Content-Type": "application/json",
