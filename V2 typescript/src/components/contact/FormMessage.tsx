@@ -1,7 +1,7 @@
-import { button } from "@/library/const"
+import { useEffect } from "react"
+import { buttonSendMessage } from "@/library/const"
 import { checkMail, selectorById } from "@/library/functions"
 import { MessageObjet } from "@/library/interfaces"
-import { useEffect } from "react"
 
 export default function FormMessage({
     setBool,
@@ -15,13 +15,13 @@ export default function FormMessage({
     const form: string[] = ["form-name", "form-mail", "form-subject", "form-text"]
 
     function isValideForm(): boolean {
-        let isFormValid = form.every((element) => {
-            const selectedElement = selectorById(element)
+        let isFormValid: boolean = form.every((element) => {
+            const selectedElement: HTMLInputElement = selectorById(element) as HTMLInputElement
             if (element === "form-mail") {
                 return checkMail(selectedElement as HTMLInputElement)
             } else return selectedElement !== null && (selectedElement as HTMLInputElement).value !== ""
         })
-        button.disabled = !isFormValid
+        buttonSendMessage.disabled = !isFormValid
         setBool(isFormValid)
         return isFormValid
     }

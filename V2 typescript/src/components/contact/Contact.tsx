@@ -1,25 +1,22 @@
 import { useState } from "react"
+import { fetchData, selectorById } from "@/library/functions"
+import { buttonSendMessage, message } from "@/library/const"
+import { MessageObjet } from "@/library/interfaces"
+import { postRequest } from "@/library/class"
+import Icone from "../../assets/mail.png"
+import Stop from "../../assets/interdit.png"
 import FormMessage from "./FormMessage"
 import Image from "next/image.js"
-import Icone from "../../assets/mail.png"
-import { button, obj } from "@/library/const"
-import { MessageObjet } from "@/library/interfaces"
-import Stop from "../../assets/interdit.png"
-import { fetchData, selectorById } from "@/library/functions"
 
 export default function Contact(): JSX.Element {
     const [bool, setBool] = useState<boolean>(false)
-    const [msg, setMsg] = useState<MessageObjet>(obj)
+    const [msg, setMsg] = useState<MessageObjet>(message)
 
-    async function sendMessage() {
-        await fetchData("/api/form", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(msg),
-        })
+    async function sendMessage(): Promise<void> {
+        await fetchData("/api/form", new postRequest(msg))
         ;(selectorById("theForm") as HTMLFormElement).reset()
         setBool(false)
-        button.disabled = true
+        buttonSendMessage.disabled = true
     }
 
     return (

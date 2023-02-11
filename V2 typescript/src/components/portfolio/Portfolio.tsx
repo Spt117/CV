@@ -7,7 +7,7 @@ export default function Portfolio(): JSX.Element {
     const [sites, setSites] = useState<Site[]>([])
 
     async function getSites(): Promise<void> {
-        const res = (await fetchData("/api/sites")) as Site[]
+        const res: Site[] = (await fetchData("/api/sites")) as Site[]
         if (res) setSites(res.reverse())
     }
 

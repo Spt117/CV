@@ -17,3 +17,9 @@ export interface Site {
     image?: string
     techno: string
 }
+
+export interface PostRequest {
+    method: string
+    headers: { [key: string]: string }
+    body: string
+}

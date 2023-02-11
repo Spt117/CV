@@ -1,3 +1,4 @@
+import { postRequest } from "@/library/class"
 import { fetchData } from "@/library/functions"
 import { Dispatch, SetStateAction, useState } from "react"
 
@@ -5,13 +6,7 @@ export default function Mdp({ setBool }: { setBool: Dispatch<SetStateAction<bool
     const [mdp, setMdp] = useState<string>("")
 
     async function checkMdp(): Promise<void> {
-        const response = (await fetchData("/api/mdp", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(mdp),
-        })) as boolean
+        const response: boolean = (await fetchData("/api/mdp", new postRequest(mdp))) as boolean
         setBool(response)
     }
 
