@@ -22,3 +22,13 @@ export async function addSite(req: NextApiRequest, res: NextApiResponse): Promis
         res.status(500).json({ error: error })
     }
 }
+
+export async function deleteSite(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+    try {
+        const data: object = await site.deleteOne({ _id: req.query.id })
+        res.status(200).json({ message: "Site supprimé" })
+        console.log(data)
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+}

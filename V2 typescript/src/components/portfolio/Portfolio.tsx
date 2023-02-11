@@ -26,8 +26,8 @@ export default function Portfolio(): JSX.Element {
                 <a href="/" id="retour">
                     <button className="glow-on-hover">Retour</button>
                 </a>
-                <a href="/ajouter-site" id="add">
-                    <button className="glow-on-hover">Ajouter</button>
+                <a href="/gestion-sites" id="add">
+                    <button className="glow-on-hover">Gérer</button>
                 </a>
             </div>
         </div>

@@ -4,16 +4,17 @@ import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
 import { useState } from "react"
 
-export default function SiteComponent({ bool }: { bool: boolean }): JSX.Element {
+export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
     const [site, setSite] = useState<Site>(siteObjet)
 
     async function sendSite() {
         if (bool) {
-            const response = await fetchData("/api/sites", new postRequest(site))
+            await fetchData("/api/sites", new postRequest(site))
         }
     }
     return (
         <>
+            <h3>Ajouter un site</h3>
             <form id="theForm2">
                 <input
                     id="form-name"

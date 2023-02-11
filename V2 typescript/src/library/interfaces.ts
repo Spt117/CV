@@ -9,6 +9,7 @@ export interface MessageObjet {
 }
 
 export interface Site {
+    _id?: ObjectId
     save(): unknown
     titre: string
     url: string
