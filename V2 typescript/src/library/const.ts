@@ -1,5 +1,5 @@
 import { selectorById } from "./functions"
-import { MessageObjet } from "./interfaces"
+import { MessageObjet, Site } from "./interfaces"
 
 export const message: MessageObjet = {
     firstName: "",
@@ -10,3 +10,10 @@ export const message: MessageObjet = {
 }
 
 export const buttonSendMessage = selectorById("form-btn") as HTMLButtonElement
+
+export const siteObjet: Site = {
+    titre: "",
+    url: "",
+    description: "",
+    techno: "",
+}
