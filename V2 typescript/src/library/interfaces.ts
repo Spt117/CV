@@ -10,7 +10,7 @@ export interface MessageObjet {
 
 export interface Site {
     _id?: ObjectId
-    save(): Promise<Site>
+    save?(): Promise<Site>
     titre: string
     url: string
     description: string

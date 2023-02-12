@@ -4,14 +4,13 @@ import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
 import { useState } from "react"
 
-export default function AjoutSite({ bool }: { bool: boolean }): JSX.Element {
+export default function AjoutSite(): JSX.Element {
     const [site, setSite] = useState<Site>(siteObjet)
 
     async function sendSite() {
-        if (bool) {
-            await fetchData("/api/sites", new request(site, "POST"))
-        }
+        await fetchData("/api/sites", new request(site, "POST"))
     }
+
     return (
         <>
             <h3>Ajouter un site</h3>

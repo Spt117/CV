@@ -13,7 +13,7 @@ export default function GestionSites(): JSX.Element {
             {!bool && <Mdp setBool={setBool} />}
             {bool && (
                 <>
-                    <AjoutSite bool={bool} />
+                    <AjoutSite />
                     <SupprimerSite />
                     <UpdateSite />
                 </>

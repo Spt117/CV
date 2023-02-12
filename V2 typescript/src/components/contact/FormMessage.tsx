@@ -15,15 +15,15 @@ export default function FormMessage({
     const form: string[] = ["form-name", "form-mail", "form-subject", "form-text"]
 
     function isValideForm(): boolean {
-        let isFormValid: boolean = form.every((element) => {
+        let boolFormValid: boolean = form.every((element) => {
             const selectedElement: HTMLInputElement = selectorById(element) as HTMLInputElement
             if (element === "form-mail") {
                 return checkMail(selectedElement as HTMLInputElement)
             } else return selectedElement !== null && (selectedElement as HTMLInputElement).value !== ""
         })
-        buttonSendMessage.disabled = !isFormValid
-        setBool(isFormValid)
-        return isFormValid
+        buttonSendMessage.disabled = !boolFormValid
+        setBool(boolFormValid)
+        return boolFormValid
     }
 
     useEffect(() => {
