@@ -17,3 +17,5 @@ export const siteObjet: Site = {
     description: "",
     techno: "",
 }
+
+export const notifications: string[] = ["Votre message a bien été envoyé !"]

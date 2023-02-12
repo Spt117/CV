@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { fetchData, selectorById } from "@/library/functions"
+import { fetchData, notification, selectorById } from "@/library/functions"
 import { buttonSendMessage, message } from "@/library/const"
 import { MessageObjet } from "@/library/interfaces"
 import { request } from "@/library/class"
@@ -17,21 +17,19 @@ export default function Contact(): JSX.Element {
         ;(selectorById("theForm") as HTMLFormElement).reset()
         setBool(false)
         buttonSendMessage.disabled = true
+        notification(0, "myForm")
     }
 
     return (
-        <>
-            <div id="container-notification"></div>
-            <div className="child1" id="myForm">
-                <h1 id="contact-titre">Formulaire de contact</h1>
-                <FormMessage setBool={setBool} setMsg={setMsg} msg={msg} />
-                <button className="btn" id="form-btn" onClick={sendMessage}>
-                    {bool && <p id="p-button">Envoyer</p>}
-                    {bool && <Image src={Icone} id="envoyer" className="social" alt="Mail" />}
-                    {!bool && <p id="p-button">Formulaire non rempli</p>}
-                    {!bool && <Image src={Stop} id="envoyer" className="social" alt="Interdit" />}
-                </button>
-            </div>
-        </>
+        <div className="child1" id="myForm">
+            <h1 id="contact-titre">Formulaire de contact</h1>
+            <FormMessage setBool={setBool} setMsg={setMsg} msg={msg} />
+            <button className="btn" id="form-btn" onClick={sendMessage}>
+                {bool && <p id="p-button">Envoyer</p>}
+                {bool && <Image src={Icone} id="envoyer" className="social" alt="Mail" />}
+                {!bool && <p id="p-button">Formulaire non rempli</p>}
+                {!bool && <Image src={Stop} id="envoyer" className="social" alt="Interdit" />}
+            </button>
+        </div>
     )
 }

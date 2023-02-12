@@ -385,9 +385,9 @@ footer {
 
 #notif {
     border-radius: 10px;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
-    color: #000;
+    color: #ffffff;
     position: absolute;
     padding: 1em;
     margin-top: 10%;
