@@ -6,10 +6,13 @@ body {
     min-height: 100vh;
 }
 
-/* #blue {
-    background-image: url("../assets/blue.jpg");
+#blue {
+    background-image: url("../assets/ciel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-#mountain {
+/* #mountain {
     background-image: url("../assets/montagne.jpg");
 } */
 
