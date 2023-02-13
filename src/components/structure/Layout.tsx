@@ -1,4 +1,4 @@
-import { fetchData, init } from "@/library/functions"
+import { fetchData } from "@/library/functions"
 import { Site } from "@/library/interfaces"
 import { mySites } from "@/library/redux"
 import { AnyAction, Dispatch } from "@reduxjs/toolkit"

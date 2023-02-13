@@ -1,6 +1,5 @@
 import { notifications } from "./const"
 import { Site } from "./interfaces"
-import { mySites } from "./redux"
 
 export function selectorById(id: string): HTMLElement | null {
     if (typeof document !== "undefined") return document.getElementById(id)
@@ -35,9 +34,4 @@ export function notification(messageId: number, blockToDisplay?: string): void {
         notif.style.display = "none"
         if (form) form.style.display = "block"
     }, 5000)
-}
-
-export async function init(callback: Function): Promise<void> {
-    const sites: Site[] = (await fetchData("/api/sites")) as Site[]
-    callback(mySites(sites))
 }
