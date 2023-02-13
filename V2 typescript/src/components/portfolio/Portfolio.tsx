@@ -1,24 +1,14 @@
-import { useState, useEffect } from "react"
-import { fetchData } from "@/library/functions"
-import { Site } from "@/library/interfaces"
+import { Site, State } from "@/library/interfaces"
 import SiteElement from "./SiteElement"
+import { useSelector } from "react-redux"
 
 export default function Portfolio(): JSX.Element {
-    const [sites, setSites] = useState<Site[]>([])
-
-    async function getSites(): Promise<void> {
-        const res: Site[] = (await fetchData("/api/sites")) as Site[]
-        if (res) setSites(res.reverse())
-    }
-
-    useEffect(() => {
-        getSites()
-    }, [])
+    const sites = useSelector((state: State) => state.sites)
 
     return (
         <div className="child1" id="myflex">
             <h1>Mon Portfolio</h1>
-            {sites.length === 0 && <div className="lds-dual-ring"></div>}
+            {sites.length === 0 && <div className="lds-dual-ring" id="loader"></div>}
             <div id="portfolio">
                 {sites.map((site: Site, index: number) => (
                     <SiteElement key={index} site={site} />

@@ -15,7 +15,7 @@ export async function getSite(res: NextApiResponse): Promise<void> {
 export async function addSite(req: NextApiRequest, res: NextApiResponse): Promise<void> {
     try {
         const newsite: Site = new site({ ...req.body })
-        const test = await newsite.save()
+        if (newsite.save) await newsite.save()
         res.status(201).json({ message: "Site enregistré" })
     } catch (error: any) {
         res.status(500).json({ error: error })

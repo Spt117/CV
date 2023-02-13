@@ -1,3 +1,5 @@
+import Mode from "./Mode"
+
 export default function Menu() {
     return (
         <div id="div-menu">
@@ -17,6 +19,7 @@ export default function Menu() {
                         <button className="from-center">Contactez-moi</button>
                     </a>
                 </li>
+                <Mode />
             </menu>
         </div>
     )

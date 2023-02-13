@@ -23,3 +23,7 @@ export interface Request {
     headers: { [key: string]: string }
     body: string
 }
+
+export interface State {
+    sites: Site[]
+}
