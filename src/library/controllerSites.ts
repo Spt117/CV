@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import site from "@/models/site"
 import { Site } from "./interfaces"
-import { UpdateResult } from "mongodb"
 
 export async function getSite(res: NextApiResponse): Promise<void> {
     try {
@@ -33,7 +32,7 @@ export async function deleteSite(req: NextApiRequest, res: NextApiResponse): Pro
 
 export async function updateSite(req: NextApiRequest, res: NextApiResponse): Promise<void> {
     try {
-        const response: UpdateResult = await site.updateOne({ _id: req.query.id }, { ...req.body, _id: req.query.id })
+        const response = await site.updateOne({ _id: req.query.id }, { ...req.body, _id: req.query.id })
         response.modifiedCount > 0
             ? res.status(200).json({ message: "Site mis à jour !" })
             : res.status(500).json({ error: "Echec de la mise à jour" })
