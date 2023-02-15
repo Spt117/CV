@@ -32,10 +32,8 @@ export async function deleteSite(req: NextApiRequest, res: NextApiResponse): Pro
 
 export async function updateSite(req: NextApiRequest, res: NextApiResponse): Promise<void> {
     try {
-        const response = await site.updateOne({ _id: req.query.id }, { ...req.body, _id: req.query.id })
-        response.modifiedCount > 0
-            ? res.status(200).json({ message: "Site mis à jour !" })
-            : res.status(500).json({ error: "Echec de la mise à jour" })
+        await site.updateOne({ _id: req.query.id }, { ...req.body, _id: req.query.id })
+        res.status(200).json({ message: "Site mis à jour !" })
     } catch (error: any) {
         res.status(500).json({ error: error })
     }

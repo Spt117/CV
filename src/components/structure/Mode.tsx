@@ -2,7 +2,7 @@ import { selectorById } from "@/library/functions"
 import { setCookie, getCookie, deleteCookie } from "cookies-next"
 import { useEffect } from "react"
 
-export default function Mode() {
+export default function Mode(): JSX.Element {
     useEffect(() => {
         if (getCookie("mode") === "mountain") {
             try {
