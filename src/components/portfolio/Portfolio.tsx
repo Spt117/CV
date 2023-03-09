@@ -1,6 +1,8 @@
 import { Site, State } from "@/library/interfaces"
 import SiteElement from "./SiteElement"
 import { useSelector } from "react-redux"
+import Link from "next/link"
+import Return from "../structure/Return"
 
 export default function Portfolio(): JSX.Element {
     const sites = useSelector((state: State) => state.sites)
@@ -15,12 +17,10 @@ export default function Portfolio(): JSX.Element {
                 ))}
             </div>
             <div id="contain-button">
-                <a href="/" id="retour">
-                    <button className="glow-on-hover">Retour</button>
-                </a>
-                <a href="/gestion-sites" id="add">
+                <Return />
+                <Link href="/gestion-sites" id="add">
                     <button className="glow-on-hover">Gérer</button>
-                </a>
+                </Link>
             </div>
         </div>
     )
