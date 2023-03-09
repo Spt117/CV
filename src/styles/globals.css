@@ -379,14 +379,9 @@ footer {
     margin: 1%;
 }
 
-#container-notification {
-    display: flex;
-    justify-content: center;
-}
-
 #notif {
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(196, 248, 255, 0.6);
     text-align: center;
     color: #ffffff;
     position: absolute;

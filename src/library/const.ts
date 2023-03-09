@@ -9,8 +9,6 @@ export const message: MessageObjet = {
     message: "",
 }
 
-export const buttonSendMessage = selectorById("form-btn") as HTMLButtonElement
-
 export const siteObjet: Site = {
     titre: "",
     url: "",

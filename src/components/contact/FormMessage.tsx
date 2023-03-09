@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import { buttonSendMessage } from "@/library/const"
 import { checkMail, selectorById } from "@/library/functions"
 import { MessageObjet } from "@/library/interfaces"
 
@@ -15,6 +14,7 @@ export default function FormMessage({
     const form: string[] = ["form-name", "form-mail", "form-subject", "form-text"]
 
     function isValideForm(): boolean {
+        const buttonSendMessage = selectorById("form-btn") as HTMLButtonElement
         let boolFormValid: boolean = form.every((element) => {
             const selectedElement: HTMLInputElement = selectorById(element) as HTMLInputElement
             if (element === "form-mail") {
