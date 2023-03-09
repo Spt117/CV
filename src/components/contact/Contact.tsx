@@ -7,7 +7,6 @@ import Icone from "../../assets/mail.png"
 import Stop from "../../assets/interdit.png"
 import FormMessage from "./FormMessage"
 import Image from "next/image.js"
-import Return from "../structure/Return"
 
 export default function Contact(): JSX.Element {
     const [bool, setBool] = useState<boolean>(false)
