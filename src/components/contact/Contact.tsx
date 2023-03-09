@@ -25,10 +25,18 @@ export default function Contact(): JSX.Element {
             <h1 id="contact-titre">Formulaire de contact</h1>
             <FormMessage setBool={setBool} setMsg={setMsg} msg={msg} />
             <button className="btn" id="form-btn" onClick={sendMessage}>
-                {bool && <p id="p-button">Envoyer</p>}
-                {bool && <Image src={Icone} id="envoyer" className="social" alt="Mail" />}
-                {!bool && <p id="p-button">Formulaire non rempli</p>}
-                {!bool && <Image src={Stop} id="envoyer" className="social" alt="Interdit" />}
+                {bool && (
+                    <>
+                        <p id="p-button">Envoyer</p>
+                        <Image src={Icone} id="envoyer" className="social" alt="Mail" />
+                    </>
+                )}
+                {!bool && (
+                    <>
+                        <p id="p-button">Formulaire non rempli</p>
+                        <Image src={Stop} id="envoyer" className="social" alt="Interdit" />
+                    </>
+                )}
             </button>
         </div>
     )

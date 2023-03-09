@@ -7,7 +7,7 @@ export default function Home(): JSX.Element {
     return (
         <>
             <Head>
-                <title>Jean-Baptiste FUND</title>
+                <title>Jean-Baptiste Fund | Développeur Web FullStack</title>
                 <meta
                     name="description"
                     content="Retrouvez ici mon site, avec mon portfolio, mon stack, le tout implémenté avec Next.js !"
