@@ -19,11 +19,11 @@ export default function Social(): JSX.Element {
                         <Image src={Github} alt="Github" className="social" />
                     </Link>
                 </div>
-                <div className="icones">
+                {/* <div className="icones">
                     <Link href="/portfolio" title="Mon Portfolio">
                         <Image src={Port} alt="Portfolio" className="social" />
                     </Link>
-                </div>
+                </div> */}
                 <div className="icones">
                     <Link href="/contact" title="Contactez-moi !">
                         <Image src={Cont} alt="Contact" className="social" />
