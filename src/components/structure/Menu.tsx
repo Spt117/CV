@@ -10,11 +10,11 @@ export default function Menu() {
                         <button className="from-center">Accueil</button>
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link href="/portfolio">
                         <button className="from-center">Portfolio</button>
                     </Link>
-                </li>
+                </li> */}
                 <li>
                     <Link href="/contact">
                         <button className="from-center">Contactez-moi</button>
